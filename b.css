@@ -1,0 +1,92 @@
+/*바탕화면, 남는 공간 제거*/
+body {
+  background-color: aliceblue;
+  margin: 0;
+  font-family: Langar;
+}
+/* 하이퍼링크 밑줄 제거하기 */
+a {
+  text-decoration: none;
+  color: thistle;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: teal;
+}
+
+.navbar_logo {
+  font-size: 24px;
+  color: white;
+}
+
+.navbar_menu {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+.navbar_menu li {
+  padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+  background-color: red;
+  border-radius: 6px;
+}
+
+.navbar_icons {
+  font-size: 24px;
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+.navbar_icons li {
+  display: flex;
+  padding: 8px 12px;
+}
+.navbar_toggleBtn {
+  display: none;
+  list-style: none;
+  padding-left: 0;
+  position: absolute;
+  right: 32px;
+  top: 4px;
+  font-size: 20px;
+  color: thistle;
+}
+
+/*창이 축소 됐을 때 */
+@media screen and (max-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 8px 12px;
+  }
+  .navbar_menu li {
+    text-align: center;
+    width: 100%;
+  }
+  .navbar_icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar_toggleBtn {
+    justify-content: flex-end;
+    display: block;
+  }
+
+  .navbar_menu.active,
+  .navbar_icons.active {
+    display: flex;
+  }
+}

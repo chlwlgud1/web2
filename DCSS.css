@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  background-color: black;
+  font-family: Rubik;
+}
+
+a {
+  text-decoration: none;
+  color: bisque;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: coral;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.navbar_logo {
+  font-size: 24px;
+}
+
+.navbar_menu {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+
+.navbar_menu li {
+  padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+  background-color: cornflowerblue;
+  border-radius: 4px;
+}
+
+.navbar_icons {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+  font-size: 24px;
+}
+.navbar_icons li {
+  padding: 8px 12px;
+}
+.navbar_toggleBtn {
+  position: absolute;
+  right: 32px;
+  color: bisque;
+  font-size: 24px;
+  display: none;
+  list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar_menu li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar_icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar_toggleBtn {
+    justify-content: flex-end;
+    display: block;
+  }
+
+  .navbar_menu.active,
+  .navbar_icons.active {
+    display: flex;
+  }
+}
